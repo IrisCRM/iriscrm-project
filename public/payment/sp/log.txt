@@ -1,0 +1,19 @@
+pay 2009-07-29 [15:13:46] -------------------1-
+array (
+  'spPaymentId' => '2009083749',
+  'spShopId' => '1328',
+  'spShopPaymentId' => '0',
+  'spBalanceAmount' => '0.1',
+  'spAmount' => '0.1',
+  'spCurrency' => 'rur',
+  'spCustomerEmail' => 'sidorov.crm@gmail.com',
+  'spPurpose' => 'пополнение баланса',
+  'spPaymentSystemId' => '0',
+  'spPaymentSystemAmount' => '0.1',
+  'spPaymentSystemPaymentId' => '2009083749',
+  'spEnrollDateTime' => '2009-07-29 15:08:45',
+  'spUserData_contactid' => 'f576e119-8da4-41a2-b940-7ebec1c69c1c',
+  'spHashString' => 'f7be7b61a0adf666730173591db6a46a',
+)
+
++ok

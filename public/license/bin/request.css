@@ -1,0 +1,85 @@
+body, table, td, span {
+	font-family		: Arial,Helvetica,sans-serif;
+	font-size		: 12px;
+	color			: #3E569C;
+}
+
+div.cont {
+	width			: 640px;
+	margin			: 10px auto 40px;
+	padding			: 5px;
+	border-left		: 1px solid #3E569C;
+	border-right	: 1px solid #3E569C;
+}
+
+div.logo {
+	background		: url(iriscrm.png) no-repeat;
+	padding			: 30px 5px 5px 300px;
+	height			: 60px;
+	font-family		: "Lucida Grande",Tahoma,Verdana,Arial,sans-serif;
+	font-size		: 30px;
+	color			: #3E569C;
+}
+
+div.help {
+	margin: 5px 10px;
+}
+
+table.form_table {
+	width		: 630px;
+}
+
+td.left {
+	text-align	: right;
+	vertical-align: top;
+	padding-top	: 4px;
+}
+
+label {
+	cursor		: poiner;
+}
+
+span.rb_comment {
+	margin		: 0px 0px 5px 25px;
+	color		: grey;
+}
+
+input, select, textarea {
+	font-family	: Arial,Helvetica,sans-serif;
+	font-size	: 12px;
+	color		: #3E569C;
+	
+}
+
+input.field, textarea.field {
+	width		: 315px
+}
+
+div#loading  {
+	margin		: 2px;
+	width		: 16px;
+	height		: 16px;
+	background	: url(loader.gif) no-repeat;
+}
+
+
+div.message_cont {
+	height		: 35px;
+	padding		: 0 10px;
+}
+div.message {
+	margin-top			: 10px;
+	padding				: 7px 3px;
+	text-align			: center;
+	border				: 1px solid #DD3C10;
+	background-color	: #FFEBE8;
+}
+
+div.ok {
+	border				: 1px solid #69981e;
+	background-color	: #caea98;
+}
+
+span.mandatory {
+	color				: #db557b;
+}

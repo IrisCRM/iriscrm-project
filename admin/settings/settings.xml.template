@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<CONFIGURATION>
+   <DB>
+      <CONN_TYPE>pgsql</CONN_TYPE>
+      <HOST>localhost</HOST>
+	   <PORT>5432</PORT>
+      <USERNAME>postgres</USERNAME>
+      <PASSWORD>postgres</PASSWORD>
+      <DB_NAME>iriscrm</DB_NAME>
+      <!-- LOG_QUERY = select|insert|update|delete|structure|error | all -->
+      <LOG_QUERY>!select</LOG_QUERY>
+   </DB>
+   <HTTP>
+      <PORT>80</PORT>
+   </HTTP>
+   <LOGIN>
+      <TABLE name="iris_contact" usernamecol="login" passwordcol="password"/>
+      <PASSWORD_ENCRYPT></PASSWORD_ENCRYPT>
+   </LOGIN>
+   <TEMPLATE name="classic"/>
+   <LANGUAGE name="ru"/>
+   <OKTELL use="false" voice="false" panel="false"/>
+   <DEBUG on="false" on_trace="false"/>
+   <SENTRY dsn="https://*****@sentry.io/*****"/>
+</CONFIGURATION>

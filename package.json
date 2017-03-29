@@ -1,0 +1,40 @@
+{
+  "name": "iriscrm",
+  "version": "5.0.0-alpha.1",
+  "description": "Iris CRM",
+  "main": "",
+  "directories": {
+    "doc": "docs",
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:dev": "./node_modules/.bin/gulp build --env=development",
+    "build:dev:watch": "./node_modules/.bin/gulp --env=development",
+    "build:prod": "./node_modules/.bin/gulp build --env=production"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {},
+  "devDependencies": {
+    "backbone": "1.0.0",
+    "browser-sync": "^2.18.8",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.0.3",
+    "gulp-color": "0.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-environments": "^0.1.1",
+    "gulp-extend": "^0.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-require-tasks": "^1.0.5",
+    "gulp-rev": "^7.1.2",
+    "gulp-sourcemaps": "^2.4.1",
+    "gulp-uglify": "^2.0.1",
+    "jquery": "1.11.0",
+    "moment": "2.5.1",
+    "prototype": "0.0.5",
+    "select2": "^4.0.3",
+    "underscore": "1.5.1"
+  }
+}

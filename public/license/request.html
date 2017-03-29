@@ -1,0 +1,119 @@
+<html>
+<meta charset="utf-8">
+<head>
+<script type="text/javascript" src="http://www.google.com/recaptcha/api/js/recaptcha_ajax.js"></script>
+<script type="text/javascript" src="bin/prototype.js"> </script>
+<script type="text/javascript" src="bin/request.js"> </script>
+
+<link href="bin/request.css" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body>
+<div class="cont">
+
+	<div class="logo">Запрос лицензий</div>
+	
+	<!--<div class="help">Лицензии нужны, чтобы: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </div>-->
+
+	<form id="form">
+	<table class="form_table">
+	<tbody>
+		<tr>
+			<td class="left">
+				<span class="mandatory">Ваш e-mail для связи</span>
+			</td>
+			<td>
+				<input class="field" name="email" type="text"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="left">
+				<span class="mandatory">Компания</span>
+			</td>
+			<td>
+				<input class="field" name="account" type="text"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="left">
+				<span class="mandatory">Общее число пользователей</span>
+			</td>
+			<td>
+				<input class="field" name="allcount" type="text"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="left">
+				<span class="mandatory">Число одновременно работающих пользователей</span>
+			</td>
+			<td>
+				<input class="field" name="count" type="text"/>
+			</td>
+		</tr>
+		<tr>
+			<td class="left">
+				Комментарий
+			</td>
+			<td>
+				<textarea class="field" rows="3" name="comment"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td class="left">
+				Способ отправки запроса
+			</td>
+			<td>
+				<input name="reqtype" id="rt1" type="radio" value="int"/>
+				<label for="rt1">Отправка запроса напрямую<br> <span class="rb_comment">(предпочтительно, если есть интернет)</span></label>
+				<br>
+				<input name="reqtype" id="rt2" type="radio" value="file"/>
+				<label for="rt2">Формирование файла<br> <span class="rb_comment">(если нет интернета)</span></label>
+			</td>
+		</tr>	
+		<tr>
+			<td class="left">
+				<span id="recaptcha_caption" class="mandatory">Защита от спама</span>
+			</td>
+			<td>
+				<div id="recaptcha_cont"/>
+				<input class="field" name="captcha" type="text"/>
+			</td>
+		</tr>
+
+		<tr>
+			<td class="left">			
+			</td>
+			<td>
+				<table>
+					<tr>
+						<td>
+							<input name="reqbtn" type="button" onclick="send_request(this.form)" value="Запросить лицензии"/>
+						</td>
+						<td>
+							<div id="loading" style="display: none"/>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+
+		
+	</tbody>
+	</table>
+
+
+
+	</form>
+
+	<div class="message_cont">
+		<div id="message" class="message" style="display: none">
+	</div>
+</div>
+
+<script>
+showCaptcha();
+</script>
+</body>
+
+</html>

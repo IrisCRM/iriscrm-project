@@ -1,0 +1,16 @@
+<form action="https://merchant.webmoney.ru/lmi/payment.asp" method="post"> 
+	<input type="text" value="1.0" name="LMI_PAYMENT_AMOUNT"/>
+	<input type="hidden" value="Пополнение баланса" name="LMI_PAYMENT_DESC"/>  
+	<input type="hidden" value="" name="LMI_PAYMENT_NO"/>  
+	<input type="hidden" value="#wm_shop_id#" name="LMI_PAYEE_PURSE"/>  
+	<input type="hidden" value="0" name="LMI_SIM_MODE"/> 
+	<input type="hidden" value="#CONTACT_ID#" name="CONTACT_ID"/> 
+<!--
+	<input type="hidden" value="#wm_confirm_url#" name="LMI_RESULT_URL"/> 
+	<input type="hidden" value="#wm_success_url#" name="LMI_SUCCESS_URL"/> 
+-->	
+	
+	<div style="display: none">
+		<input type="submit" value="Перейти к оплате"/> 
+	</div>
+</form>
