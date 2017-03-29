@@ -21,5 +21,5 @@
    <LANGUAGE name="ru"/>
    <OKTELL use="false" voice="false" panel="false"/>
    <DEBUG on="false" on_trace="false"/>
-   <SENTRY dsn="https://*****@sentry.io/*****"/>
+   <!-- <SENTRY dsn="https://*****@sentry.io/*****"/> -->
 </CONFIGURATION>
