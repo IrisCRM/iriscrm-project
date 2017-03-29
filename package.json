@@ -8,6 +8,7 @@
     "example": "examples"
   },
   "scripts": {
+    "postinstall": "mkdir -p build",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:dev": "./node_modules/.bin/gulp build --env=development",
     "build:dev:watch": "./node_modules/.bin/gulp --env=development",
