@@ -1,7 +1,7 @@
 <?php
 //ini_set('display_errors', 'on');
 
-$iriscrmKernelPath = dirname(dirname(__FILE__)) . '/vendor/iriscrm/source-core/src/Iris/';
+$iriscrmKernelPath = dirname(dirname(__FILE__)) . '/vendor/iriscrm/core/src/Iris/';
 
 require_once $iriscrmKernelPath . 'core/engine/bootstrap.php';
 

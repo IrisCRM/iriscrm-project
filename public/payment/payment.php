@@ -1,7 +1,7 @@
 <?php
 /* общие функции для пополнения баланса */
 
-$iriscrmKernelPath = dirname(dirname(dirname(__FILE__))) . '/vendor/iriscrm/source-core/src/Iris/';
+$iriscrmKernelPath = dirname(dirname(dirname(__FILE__))) . '/vendor/iriscrm/core/src/Iris/';
 require_once $iriscrmKernelPath . 'core/engine/bootstrap.php';
 require_once Loader::getLoader()->loadOnce('common/Lib/lib.php');
 require_once Loader::getLoader()->loadOnce('common/Lib/access.php');

@@ -37,7 +37,7 @@ execSync('./iris iris:generate-js-translations');
 
 del.sync('build/migrations');
 
-var coreDir = 'vendor/iriscrm/source-core/src/Iris/';
+var coreDir = 'vendor/iriscrm/core/src/Iris/';
 
 var themes = fs.readdirSync(coreDir + 'core/templates')
     .filter(function (file) {
