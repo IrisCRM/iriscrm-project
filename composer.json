@@ -2,7 +2,7 @@
     "name": "iriscrm/iriscrm-project",
     "description": "Iris CRM",
     "require": {
-        "iriscrm/core-build": "^5.0",
+        "iriscrm/core": "^5.0",
         "iriscrm/config-crm": "^5.0"
     },
     "autoload": {
