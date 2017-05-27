@@ -9,6 +9,7 @@
       <DB_NAME>iriscrm</DB_NAME>
       <!-- LOG_QUERY = select|insert|update|delete|structure|error | all -->
       <LOG_QUERY>!select</LOG_QUERY>
+      <ORDER_OPTIONS asc_null_position="first" desc_null_position="last"/>
    </DB>
    <HTTP>
       <PORT>80</PORT>
@@ -22,4 +23,6 @@
    <OKTELL use="false" voice="false" panel="false"/>
    <DEBUG on="false" on_trace="false"/>
    <!-- <SENTRY dsn="https://*****@sentry.io/*****"/> -->
+   <QUEUE prefix="iris:"/>
+   <LOGGER log_level="info" alert_level="warning"/>
 </CONFIGURATION>

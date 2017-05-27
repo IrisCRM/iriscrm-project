@@ -6,7 +6,7 @@
 ```php
 use Iris\Iris;
 
-$loggerFactory = Iris::$app->getContainer()->get('LoggerFactory'); 
+$loggerFactory = Iris::$app->getContainer()->get('logger.factory'); 
 
 // Создаем логгер, который будет писать сообщения в log/test.log
 /** @var \Psr\Log\LoggerInterface $logger */

@@ -111,6 +111,7 @@ paths.loginImages = [ coreDir + 'core/login/images/login/*' ];
 
 paths.scripts = [];
 paths.configStyles = [];
+paths.emailStyles = [];
 paths.reportStyles = [];
 paths.configImages = [];
 paths.migrations = [ config.coreDirectory + 'migrations/Version*.php' ];
@@ -118,11 +119,15 @@ var allHierarchy = [ coreDir + 'core/' ];
 
 config.configDirectories.reverse().forEach(function (item) {
     paths.scripts.push(item + '**/*.js');
+    paths.scripts.push('!' + item + 'vendor/**/*');
+    paths.scripts.push('!' + item + 'login/**/*.js');
+    paths.scripts.push('!' + item + 'templates/**/*.js');
     paths.loginScripts.push(item + 'login/**/*.js');
 
     paths.migrations.push(item + 'migrations/Version*.php');
 
     paths.configStyles.push(item + 'styles/*.css');
+    paths.emailStyles.push(item + 'sections/Email/**/*.css');
     paths.reportStyles.push(item + 'sections/Report/**/*.css');
     paths.loginStyles.push(item + 'login/**/*.css');
 
@@ -180,6 +185,15 @@ gulp.task('configStyles', ['clean'], function() {
             base: revManifestPath
         }))
         .pipe(gulp.dest(revManifestPath))
+    ;
+});
+gulp.task('emailStyles', ['clean', 'configStyles'], function() {
+    return gulp.src(paths.emailStyles)
+        .pipe(development(sourcemaps.init()))
+        .pipe(concat('css/email.min.css'))
+        .pipe(production(cleanCSS()))
+        .pipe(development(sourcemaps.write()))
+        .pipe(gulp.dest('public/build/'))
     ;
 });
 gulp.task('reportStyles', ['clean', 'configStyles'], function() {
@@ -417,6 +431,7 @@ var tasks = [
 
     'styles',
     'configStyles',
+    'emailStyles',
     'reportStyles',
     'loginStyles',
 
@@ -445,7 +460,18 @@ gulp.task('build', tasks.concat(['manifest']), function() {
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-    gulp.watch(paths.scripts, ['build']);
+    gulp.watch([
+        paths.scripts,
+        paths.styles,
+        paths.coreScripts,
+        paths.languageScripts,
+        paths.loginStyles,
+        paths.loginScripts,
+        paths.configStyles,
+        paths.emailStyles,
+        paths.reportStyles,
+        paths.migrations
+    ], ['build']);
 });
 
 // The default task (called when you run `gulp` from cli)
