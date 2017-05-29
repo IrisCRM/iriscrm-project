@@ -14,8 +14,9 @@ Iris CRM
     -   json
     -   curl
     -   mbstring
+    -   imap
     -   ionCube PHP Loader
--   Apache 2
+-   Apache 2 или Nginx
 -   PostgreSQL 9.3+
  
 Установка возможна на любую операционную систему, включая Windows, Linux, MacOS. 
