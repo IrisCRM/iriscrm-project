@@ -2,6 +2,7 @@
     "name": "iriscrm/iriscrm-project",
     "description": "Iris CRM",
     "require": {
+        "bernard/bernard": "^1.0@alpha",
         "iriscrm/core": "^5.1",
         "iriscrm/config-crm": "^5.1"
     },
