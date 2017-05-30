@@ -8,7 +8,7 @@
       <PASSWORD>postgres</PASSWORD>
       <DB_NAME>iriscrm</DB_NAME>
       <!-- LOG_QUERY = select|insert|update|delete|structure|error | all -->
-      <LOG_QUERY>!select</LOG_QUERY>
+      <LOG_QUERY></LOG_QUERY>
       <ORDER_OPTIONS asc_null_position="first" desc_null_position="last"/>
    </DB>
    <HTTP>
