@@ -1,0 +1,29 @@
+# ignoring files
+admin/logs/*
+admin/settings/settings*.xml
+
+output/*
+public/build
+release/project/build
+release/core/build
+
+vendor/
+node_modules/
+npm-debug.log
+
+# for eclipse
+.settings/*
+.buildpath
+.project
+
+# netbeans files
+nbproject/*
+
+# PhpStorm files
+.idea
+
+# Sublime files
+*.sublime-workspace
+*.sublime-project
+*-test.xml
+*-test.xml~
