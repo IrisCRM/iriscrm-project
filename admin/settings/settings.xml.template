@@ -18,7 +18,7 @@
       <TABLE name="iris_contact" usernamecol="login" passwordcol="password"/>
       <PASSWORD_ENCRYPT></PASSWORD_ENCRYPT>
    </LOGIN>
-   <TEMPLATE name="classic"/>
+   <TEMPLATE name="bootstrap"/>
    <LANGUAGE name="ru"/>
    <OKTELL use="false" voice="false" panel="false"/>
    <DEBUG on="false" on_trace="false"/>

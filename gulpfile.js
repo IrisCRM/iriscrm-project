@@ -80,6 +80,7 @@ paths.vendorScripts = [
 paths.coreScripts = [
     coreDir + 'core/engine/js/loader.js',
     coreDir + 'core/engine/js/transport.js',
+    coreDir + 'core/engine/js/irisdialog.js',
     coreDir + 'core/engine/js/controllers.js',
     coreDir + 'core/engine/js/controller.js',
     coreDir + 'core/engine/js/cardcontroller.js',
@@ -97,7 +98,7 @@ paths.coreScripts = [
 paths.languageScripts = [ 'build/language/**/*.js' ];
 paths.oktellScripts = [ coreDir + 'core/engine/js/oktell.js-1.7.1/*.min.*' ];
 paths.ckeditorScripts = [ coreDir + 'core/engine/js/ckeditor/**/*' ];
-paths.bootstrapScripts = [ coreDir + 'core/bootstrap/**/*' ];
+paths.bootstrapScripts = [ 'vendor/twbs/bootstrap/dist/**/*' ];
 paths.ie9Scripts = [ coreDir + 'core/html5shiv.js', 'core/respond.min.js' ];
 paths.jqueryScripts = [ 'node_modules/jquery/dist/jquery.min.js' ];
 paths.jqueryUiScripts = [ coreDir + 'core/engine/js/jquery-ui/jquery-ui-1.10.4.min.js' ];
@@ -225,7 +226,11 @@ gulp.task('loginStyles', ['clean'], function() {
         ;
 });
 
+var themeFiles = [];
 themes.forEach(function (theme) {
+    allHierarchy.forEach(function(item) {
+        themeFiles.push(item + 'templates/' + theme + '/**/*.*');
+    });
     gulp.task('theme-' + theme + '-styles', ['clean'], function() {
         var themeStyles = [];
         allHierarchy.forEach(function (item) {
@@ -471,7 +476,7 @@ gulp.task('watch', function() {
         paths.emailStyles,
         paths.reportStyles,
         paths.migrations
-    ], ['build']);
+    ].concat(themeFiles), ['build']);
 });
 
 // The default task (called when you run `gulp` from cli)
