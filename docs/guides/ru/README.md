@@ -10,5 +10,6 @@
 * [Логгер](logger.md)
 * [Очереди](queue.md)
 * [Email](email.md)
+* [Настройка уведомлений в Telegram](telegram.md)
 
 Больше документации - на сайте [Iris CRM](http://iris-crm.ru/documentation).
