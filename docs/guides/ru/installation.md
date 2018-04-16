@@ -27,6 +27,31 @@
     </VirtualHost>
     ```
 
+    Пример для Nginx:
+    ```
+    server {
+        listen 80;
+    
+        server_name iris5.local;
+        root /var/www/iriscrm/public/;
+        index index.php index.html index.htm;
+    
+        client_max_body_size 2g;
+        access_log /var/log/nginx/iriscrm_access.log;
+        error_log /var/log/nginx/iriscrm_error.log;
+    
+      location / {
+        try_files $uri $uri/ /index.php?$args;
+      }
+    
+      location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/run/php/php7.0-fpm.sock;
+        fastcgi_read_timeout 300;
+      }
+    }
+    ```
+
 1.  Создайте пустую базу данных в PostgreSQL.
 
 1.  Скопируйте файл настроек `admin/settings/settings.xml.template` 
