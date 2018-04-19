@@ -40,7 +40,7 @@ namespace SomeClient\Config\ConfigName\sections\Demo;
 
 use Config;
 use Iris\Annotation\RequestMethod;
-use Iris\Annotations\RequireAuth;
+use Iris\Annotation\RequireAuth;
 
 class api_Demo extends Config
 {
