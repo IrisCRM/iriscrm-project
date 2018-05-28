@@ -81,4 +81,4 @@
     ./iris migrations:migrate
     ```
     
-1.  Закажите лицензии на странице http://<iris crm>/license/request.html.
+1.  Закажите лицензии на странице http://<iris crm>/page/License/request
