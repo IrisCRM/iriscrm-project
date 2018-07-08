@@ -82,7 +82,7 @@
 
 1.  Выполните миграции:
     ```
-    ./iris migrations:migrate
+    npm run migrations:migrate
     ```
     
 1.  Закажите лицензии на странице http://\<адрес системы\>/page/License/request

@@ -8,11 +8,11 @@
     "example": "examples"
   },
   "scripts": {
-    "postinstall": "mkdir -p build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:dev": "./node_modules/.bin/gulp build --env=development",
-    "build:dev:watch": "./node_modules/.bin/gulp --env=development",
-    "build:prod": "./node_modules/.bin/gulp build --env=production"
+    "build:dev": "gulp build --env=development",
+    "build:dev:watch": "gulp --env=development",
+    "build:prod": "gulp build --env=production",
+    "migrations:migrate": "php ./iris migrations:migrate"
   },
   "keywords": [],
   "author": "",

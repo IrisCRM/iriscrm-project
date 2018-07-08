@@ -13,6 +13,8 @@ const extend = require('gulp-extend');
 const rename = require("gulp-rename");
 const environments = require('gulp-environments');
 
+const irisCommand = 'php ./iris'; // add php to correct work in windows
+
 if (fs.existsSync('gulp-tasks')) {
     require('gulp-require-tasks')();
 }
@@ -25,7 +27,7 @@ const tmpPath = 'public/build/tmp/';
 const revManifestTmpPath = tmpPath + 'manifest/';
 
 // Generate config for Gulp
-execSync('./iris iris:generate-gulp-config');
+execSync(irisCommand + ' ' + 'iris:generate-gulp-config');
 var config = require('./build/gulp-config.js');
 console.log(color('Gulp config:', 'YELLOW'));
 console.log(config);
@@ -33,7 +35,7 @@ console.log();
 
 // Generate JS files with translations
 del.sync('build/language');
-execSync('./iris iris:generate-js-translations');
+execSync(irisCommand + ' ' + 'iris:generate-js-translations');
 
 del.sync('build/migrations');
 
