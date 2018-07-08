@@ -20,6 +20,10 @@
                     Options Indexes FollowSymLinks
                     AllowOverride All
                     Require all granted
+                    RewriteEngine on
+                    RewriteCond %{REQUEST_FILENAME} !-f
+                    RewriteCond %{REQUEST_FILENAME} !-d
+                    RewriteRule . /index.php [L]
             </Directory>
     
             ErrorLog ${APACHE_LOG_DIR}/error.log
