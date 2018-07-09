@@ -3,8 +3,8 @@
     "description": "Iris CRM",
     "require": {
         "bernard/bernard": "^1.0@alpha",
-        "iriscrm/core": "^5.5.3",
-        "iriscrm/config-crm": "^5.5.2"
+        "iriscrm/core": "^5.5",
+        "iriscrm/config-crm": "^5.5"
     },
     "autoload": {
         "psr-4": {
