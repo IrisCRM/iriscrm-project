@@ -1,0 +1,51 @@
+run-tests-docker:
+  tags:
+    - tests-runner
+  image: docker:latest
+  services:
+    - name: docker:dind
+  before_script:
+    - apk add --no-cache py-pip
+    - pip install docker-compose
+  script:
+    - docker-compose up --build --exit-code-from=test test
+      && docker-compose down
+
+deploy-docker:
+  tags:
+    - iriscrm-runner
+  script:
+    - echo "Deploy to dev server"
+    - docker-compose up --build web
+  variables:
+    IRIS_ENV: "docker"
+  when: manual
+
+deploy:
+  tags:
+    - iriscrm-runner
+  script:
+    - echo "Deploy to dev server"
+    - export PROJECT_RELEASES_PATH=$RELEASES_PATH/$CI_PROJECT_NAME
+    - export CUR_RELEASE_DIR=$PROJECT_RELEASES_PATH/$CI_COMMIT_SHA
+    - echo "Create new release in $CUR_RELEASE_DIR"
+    - rm -Rf $CUR_RELEASE_DIR
+    - mkdir -p $CUR_RELEASE_DIR
+    - rsync -ar $CI_PROJECT_DIR/* $CUR_RELEASE_DIR/
+    - cd $CUR_RELEASE_DIR
+    - /usr/local/bin/composer -n install --ansi
+    - npm install
+    - npm run build:prod
+    - echo "Create necessary folders & set permissions"
+    - echo "Create current release symlink from $CUR_RELEASE_DIR to $PROJECT_RELEASES_PATH/current"
+    - rm -f $PROJECT_RELEASES_PATH/current
+    - ln -s $CUR_RELEASE_DIR $PROJECT_RELEASES_PATH/current
+    - echo "Restart supervisor"
+    - sudo supervisorctl restart
+    - echo "Delete old releases"
+    - find $PROJECT_RELEASES_PATH/* -maxdepth 0 -type d -ctime +2 -exec rm -rf {} \;
+  variables:
+    GIT_STRATEGY: clone
+    IRIS_ENV: "docker"
+    APPLICATION_PATH: "/var/www/html"
+  when: manual

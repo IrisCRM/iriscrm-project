@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<CONFIGURATION>
+   <DB>
+      <CONN_TYPE>pgsql</CONN_TYPE>
+      <HOST>db</HOST>
+	   <PORT>5432</PORT>
+      <USERNAME>iris</USERNAME>
+      <PASSWORD>iris</PASSWORD>
+      <DB_NAME>iriscrm</DB_NAME>
+      <!-- LOG_QUERY = select|insert|update|delete|structure|error | all -->
+      <LOG_QUERY>!select</LOG_QUERY>
+   </DB>
+   <HTTP>
+      <PORT>80</PORT>
+   </HTTP>
+   <LOGIN>
+      <TABLE name="iris_contact" usernamecol="login" passwordcol="password"/>
+      <PASSWORD_ENCRYPT></PASSWORD_ENCRYPT>
+   </LOGIN>
+   <TEMPLATE name="bootstrap"/>
+   <LANGUAGE name="ru"/>
+   <OKTELL use="false" voice="false" panel="false"/>
+   <DEBUG on="false" on_trace="false"/>
+   <QUEUE prefix="iris-docker:" host="redis" port="6379" database="0"/>
+   <LOGGER log_level="info" alert_level="warning"/>
+   <API>
+      <TOKEN_PARAMETER>api-token</TOKEN_PARAMETER>
+   </API>
+</CONFIGURATION>

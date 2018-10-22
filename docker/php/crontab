@@ -1,0 +1,2 @@
+# Add your commands for cron here
+# * * * * * cd /var/www/html && /usr/local/bin/php iris your:command >> /var/log/cron.log 2>&1

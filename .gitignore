@@ -1,6 +1,7 @@
 # ignoring files
 admin/logs/*
 admin/settings/settings*.xml
+!admin/settings/settings-docker.xml
 
 output/*
 public/build

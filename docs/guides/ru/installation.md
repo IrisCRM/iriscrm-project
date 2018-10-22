@@ -1,6 +1,20 @@
 Установка
 =========
 
+## Установка с помощью Docker
+
+1.  Сделайте форк проекта-шаблона https://github.com/IrisCRM/iriscrm-project 
+    или скачайте проект в виде zip-архива и распакуйте его.
+
+1.  Выполните сборку и запуск контейнеров из каталога проекта.
+    Это может занять длительное время.
+    ```bash
+    docker-compose up --build web
+    ```
+1.  Закажите лицензии на странице http://localhost:888/page/License/request
+
+## Установка из командной строки
+
 1.  Установите [ionCube Loader](http://iris-crm.ru/install-php-under-linux).
 
 1.  Сделайте форк проекта-шаблона https://github.com/IrisCRM/iriscrm-project 
