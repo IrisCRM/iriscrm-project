@@ -9,7 +9,7 @@
 1.  Выполните сборку и запуск контейнеров из каталога проекта.
     Это может занять длительное время.
     ```bash
-    docker-compose up --build web
+    docker-compose up --build
     ```
 1.  Закажите лицензии на странице http://localhost:888/page/License/request
 

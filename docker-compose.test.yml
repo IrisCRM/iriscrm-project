@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+
+  test:
+    build:
+      context: docker/test
+    restart: always
+    volumes:
+      - .:/var/www/html
+    environment:
+      IRIS_ENV: docker

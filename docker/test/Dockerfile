@@ -32,6 +32,7 @@ RUN apt-get update && apt-get install -y \
         libc-client-dev \
         libkrb5-dev \
         supervisor \
+        git \
         cron \
         mc \
         htop \
@@ -74,6 +75,11 @@ RUN curl -O http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x
     && cp "ioncube/ioncube_loader_lin_${PHP_VERSION}_ts.so" $PHP_EXT_DIR \
     && rm -rf ioncube ioncube_loaders_lin_x86-64.tar.gz \
     && echo "zend_extension=ioncube_loader_lin_${PHP_VERSION}.so" > /usr/local/etc/php/conf.d/ioncube.ini
+
+# Setup known hosts
+RUN mkdir /root/.ssh/ \
+    && ssh-keyscan github.com >> /root/.ssh/known_hosts \
+    && ssh-keyscan gitlab.com >> /root/.ssh/known_hosts
 
 RUN apt update -y \
     && apt -y install procps
